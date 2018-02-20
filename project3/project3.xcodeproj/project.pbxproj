@@ -12,7 +12,7 @@
 		0AC5892F20193DB200AD1691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5892D20193DB200AD1691 /* Main.storyboard */; };
 		0AC5893120193DB200AD1691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5893020193DB200AD1691 /* Assets.xcassets */; };
 		0AC5893420193DB200AD1691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5893220193DB200AD1691 /* LaunchScreen.storyboard */; };
-		EF15B9A2F6DF09CD23D1E294 /* Pods_project3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1657E8416244583C43A9BCE8 /* Pods_project3.framework */; };
+		0F76D49A12EE7BD243B04325 /* Pods_project3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E985E66D427843370AB4513E /* Pods_project3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +23,9 @@
 		0AC5893020193DB200AD1691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AC5893320193DB200AD1691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AC5893520193DB200AD1691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1657E8416244583C43A9BCE8 /* Pods_project3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_project3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB81B23120C246F7165128D5 /* Pods-project3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project3.release.xcconfig"; path = "Pods/Target Support Files/Pods-project3/Pods-project3.release.xcconfig"; sourceTree = "<group>"; };
-		F005F93B463B672EDE207F60 /* Pods-project3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-project3/Pods-project3.debug.xcconfig"; sourceTree = "<group>"; };
+		1FFC2946E19B31E0C0F7AC86 /* Pods-project3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-project3/Pods-project3.debug.xcconfig"; sourceTree = "<group>"; };
+		B229EEDFC95149FF0DA91C29 /* Pods-project3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project3.release.xcconfig"; path = "Pods/Target Support Files/Pods-project3/Pods-project3.release.xcconfig"; sourceTree = "<group>"; };
+		E985E66D427843370AB4513E /* Pods_project3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_project3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF15B9A2F6DF09CD23D1E294 /* Pods_project3.framework in Frameworks */,
+				0F76D49A12EE7BD243B04325 /* Pods_project3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +45,8 @@
 			children = (
 				0AC5892820193DB200AD1691 /* project3 */,
 				0AC5892720193DB200AD1691 /* Products */,
-				701AC66BE9968F6FB833A513 /* Pods */,
-				6382429113461BE3F201BAD8 /* Frameworks */,
+				B005D9A73D458723B834EC8D /* Pods */,
+				71BB8E5508B02E5E30C5D853 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,19 +71,19 @@
 			path = project3;
 			sourceTree = "<group>";
 		};
-		6382429113461BE3F201BAD8 /* Frameworks */ = {
+		71BB8E5508B02E5E30C5D853 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1657E8416244583C43A9BCE8 /* Pods_project3.framework */,
+				E985E66D427843370AB4513E /* Pods_project3.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		701AC66BE9968F6FB833A513 /* Pods */ = {
+		B005D9A73D458723B834EC8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F005F93B463B672EDE207F60 /* Pods-project3.debug.xcconfig */,
-				BB81B23120C246F7165128D5 /* Pods-project3.release.xcconfig */,
+				1FFC2946E19B31E0C0F7AC86 /* Pods-project3.debug.xcconfig */,
+				B229EEDFC95149FF0DA91C29 /* Pods-project3.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -95,12 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AC5893820193DB200AD1691 /* Build configuration list for PBXNativeTarget "project3" */;
 			buildPhases = (
-				01393CA4FAB1D779808EFEEE /* [CP] Check Pods Manifest.lock */,
+				739AF74E6F9993ACAA76A71F /* [CP] Check Pods Manifest.lock */,
 				0AC5892220193DB200AD1691 /* Sources */,
 				0AC5892320193DB200AD1691 /* Frameworks */,
 				0AC5892420193DB200AD1691 /* Resources */,
-				14504E94D79E7D5C35ABFE40 /* [CP] Embed Pods Frameworks */,
-				7B21A211D80671C8A7AF963F /* [CP] Copy Pods Resources */,
+				11052808BAA57008C72CD9EB /* [CP] Embed Pods Frameworks */,
+				1729AD51530BA6E9E4F0DBD3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,7 +159,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01393CA4FAB1D779808EFEEE /* [CP] Check Pods Manifest.lock */ = {
+		11052808BAA57008C72CD9EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-project3/Pods-project3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1729AD51530BA6E9E4F0DBD3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-project3/Pods-project3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		739AF74E6F9993ACAA76A71F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -175,36 +205,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		14504E94D79E7D5C35ABFE40 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-project3/Pods-project3-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7B21A211D80671C8A7AF963F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-project3/Pods-project3-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -350,37 +350,43 @@
 		};
 		0AC5893920193DB200AD1691 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F005F93B463B672EDE207F60 /* Pods-project3.debug.xcconfig */;
+			baseConfigurationReference = 1FFC2946E19B31E0C0F7AC86 /* Pods-project3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 463X4DVTMN;
 				INFOPLIST_FILE = project3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.kentcapstone.project3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1e350d81-db6e-45fb-81c4-b173c65010df";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development edu.kentcapstone.project3";
+				PROVISIONING_PROFILE = "66185d71-976c-49f6-8a5a-f9301cbb02dd";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore edu.kentcapstone.project3";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		0AC5893A20193DB200AD1691 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB81B23120C246F7165128D5 /* Pods-project3.release.xcconfig */;
+			baseConfigurationReference = B229EEDFC95149FF0DA91C29 /* Pods-project3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 463X4DVTMN;
 				INFOPLIST_FILE = project3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.kentcapstone.project3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1e350d81-db6e-45fb-81c4-b173c65010df";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development edu.kentcapstone.project3";
+				PROVISIONING_PROFILE = "66185d71-976c-49f6-8a5a-f9301cbb02dd";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore edu.kentcapstone.project3";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
