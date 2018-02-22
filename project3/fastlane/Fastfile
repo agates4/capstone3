@@ -23,7 +23,7 @@ platform :ios do
     )
     appicon(appicon_image_file: 'fastlane/logo/logo.jpg',
       appicon_devices: [:ipad, :iphone, :ios_marketing],
-      appicon_path: 'project3/Images.xcassets'
+      appicon_path: 'project3/Assets.xcassets'
     )
     sync_code_signing(type: "appstore")
     build_app(workspace: "project3.xcworkspace", scheme: "project3")
