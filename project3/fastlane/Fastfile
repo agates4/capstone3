@@ -21,6 +21,10 @@ platform :ios do
     increment_version_number(
       bump_type: "patch" # Automatically increment minor version number
     )
+    appicon(appicon_image_file: 'fastlane/logo/logo.jpg',
+      appicon_devices: [:ipad, :iphone, :ios_marketing],
+      appicon_path: 'project3/Images.xcassets'
+    )
     sync_code_signing(type: "appstore")
     build_app(workspace: "project3.xcworkspace", scheme: "project3")
     upload_to_testflight(
