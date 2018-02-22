@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMaps
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GMSMapViewDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +22,12 @@ class ViewController: UIViewController {
     }
 
 
+    override func loadView() {
+        let panoView = GMSPanoramaView(frame: .zero)
+        self.view = panoView
+        
+        panoView.moveNearCoordinate(CLLocationCoordinate2D(latitude: -33.732, longitude: 150.312))
+    }
+    
 }
 
