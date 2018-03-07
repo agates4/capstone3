@@ -9,24 +9,35 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController, GMSMapViewDelegate  {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ViewController: UIViewController, GMSPanoramaViewDelegate  {
+    
+    func panoramaView(_ view: GMSPanoramaView, didMoveTo panorama: GMSPanorama?) {
+        print(panorama?.coordinate as Any)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func panoramaView(_ panoramaView: GMSPanoramaView, didTap marker: GMSMarker) -> Bool {
+        print("YOYOYO")
+        
+        return true
     }
-
 
     override func loadView() {
         let panoView = GMSPanoramaView(frame: .zero)
+        panoView.delegate = self
         self.view = panoView
         
-        panoView.moveNearCoordinate(CLLocationCoordinate2D(latitude: -33.732, longitude: 150.312))
+        // Create a marker in paris
+        let position = CLLocationCoordinate2D(latitude: 48.858, longitude: 2.284)
+        let marker = GMSMarker(position: position)
+        marker.title = "Hello World"
+        marker.snippet = "Population: 8,174,100"
+        marker.zIndex = 100
+        
+        
+        // Add the marker to a GMSPanoramaView object named panoView
+        marker.panoramaView = panoView
+        
+        panoView.moveNearCoordinate(CLLocationCoordinate2D(latitude: 48.858, longitude: 2.284))
     }
     
 }

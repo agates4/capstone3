@@ -357,7 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 463X4DVTMN;
@@ -366,8 +366,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.kentcapstone.project3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "66185d71-976c-49f6-8a5a-f9301cbb02dd";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore edu.kentcapstone.project3";
+				PROVISIONING_PROFILE = "d75c2704-4957-4dea-a19b-5289a06e2f2d";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development edu.kentcapstone.project3";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -380,7 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 463X4DVTMN;
@@ -389,8 +389,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.kentcapstone.project3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "66185d71-976c-49f6-8a5a-f9301cbb02dd";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore edu.kentcapstone.project3";
+				PROVISIONING_PROFILE = "d75c2704-4957-4dea-a19b-5289a06e2f2d";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development edu.kentcapstone.project3";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
