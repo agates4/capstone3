@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
   </div>
   <?php include 'js/js.html'; ?>
+  <?php $mysqli->close(); ?>
 </body>
 
 </html>
