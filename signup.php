@@ -10,7 +10,7 @@ session_start();
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Login Form</title>
+  <title>Sign-Up Form</title>
 	<?php include 'css/css.html'; ?>
 </head>
 
@@ -31,20 +31,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   <div class="container fluid">
     <ul class="nav nav-pills nav-fill">
       <li class="nav-item">
-        <a class="nav-link" href="signup.php">Sign up</a>
+        <a class="nav-link active" href="signup.php">Sign up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="login.php">Log In</a>
+        <a class="nav-link" href="index.php">Log In</a>
       </li>
     </ul>
 
-    <div class="mt-5" id="login">   
+    <div class="mt-5" id="signup">   
 
       <div class="alert alert-primary text-center" role="alert">
         <h2>Welcome to<br>Street View Assistance</h2>
       </div>
 
       <form action="index.php" method="post" autocomplete="off">
+        <div class="form-group">
+          <label for="InputUserName">User Name</label>
+          <input type="text" class="form-control" id="InputUserName" placeholder="Enter username" name="username" required>
+        </div>
         <div class="form-group">
           <label for="InputEmail">Email address</label>
           <input type="email" class="form-control" id="InputEmail" placeholder="Enter email" name="email" required>
@@ -53,11 +57,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           <label for="InputPassword">Password</label>
           <input type="password" class="form-control" id="InputPassword" placeholder="Enter Password" name="password" required>
         </div>
-        <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">Log In</button>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" name="register">Register</button>
       </form>
-
+    
     </div>
-
+      
   </div>
   <?php include 'js/js.html'; ?>
   <?php $mysqli->close(); ?>
