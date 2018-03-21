@@ -49,11 +49,11 @@ else {
           </div>
         <div class="form-group">
             <label>Latitude</label>
-            <input type="number" step="0.0001" class="form-control" name="latitude" required>
+            <input type="number" step="0.0000001" class="form-control" name="latitude" required>
           </div>
           <div class="form-group">
             <label>Longitude</label>
-            <input type="number" step="0.0001" class="form-control" name="longitude" required>
+            <input type="number" step="0.0000001" class="form-control" name="longitude" required>
           </div>
           <div class="form-group">
             <label>Description</label>
