@@ -62,11 +62,11 @@ else {
           </div>
         <div class="form-group">
             <label>Latitude</label>
-            <input type="number" step="0.0001" class="form-control" name="latitude" value="<?php echo $poi_x; ?>">
+            <input type="number" step="0.0000001" class="form-control" name="latitude" value="<?php echo $poi_x; ?>">
           </div>
           <div class="form-group">
             <label>Longitude</label>
-            <input type="number" step="0.0001" class="form-control" name="longitude" value="<?php echo $poi_y; ?>">
+            <input type="number" step="0.0000001" class="form-control" name="longitude" value="<?php echo $poi_y; ?>">
           </div>
           <div class="form-group">
             <label>Description</label>
