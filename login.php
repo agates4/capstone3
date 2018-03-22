@@ -1,9 +1,6 @@
 <?php
 /* User login process, checks if user exists and password is correct */
 
-echo json_encode([$_POST['email'] => $_POST['password']]);
-return;
-
 // Escape email to protect against SQL injections
 $email = $mysqli->escape_string($_POST['email']);
 $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
@@ -12,6 +9,10 @@ $response = array();
 if ( $result->num_rows == 0 ){ // User doesn't exist
     $_SESSION['message'] = "User with that email doesn't exist!";
     header("location: error.php");
+    $response = array(
+        'status' => false,
+        'message' => 'An error occured...'
+    );
 }
 else { // User exists
     $user = $result->fetch_assoc();
@@ -29,8 +30,7 @@ else { // User exists
         header("location: main.php");
         $response = array(
             'status' => true,
-            'message' => 'Success',
-            'data' => ph_fetch_all($result)
+            'message' => 'Success'
         );
     }
     else {
