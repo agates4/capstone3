@@ -1,7 +1,7 @@
 <?php
 /* User login process, checks if user exists and password is correct */
 
-echo json_encode(['yay' => 'aww']);
+echo json_encode([$_POST['email'] => $_POST['password']]);
 return;
 
 // Escape email to protect against SQL injections
