@@ -4,6 +4,7 @@
 // Escape email to protect against SQL injections
 $email = $mysqli->escape_string($_POST['email']);
 $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
+$response = array();
 
 if ( $result->num_rows == 0 ){ // User doesn't exist
     $_SESSION['message'] = "User with that email doesn't exist!";
@@ -23,10 +24,20 @@ else { // User exists
         $_SESSION['logged_in'] = true;
         $_SESSION['message'] = "";
         header("location: main.php");
+        $response = array(
+            'status' => true,
+            'message' => 'Success',
+            'data' => ph_fetch_all($result)
+        );
     }
     else {
         $_SESSION['message'] = "You have entered wrong password, try again!";
         header("location: error.php");
+        $response = array(
+            'status' => false,
+            'message' => 'An error occured...'
+        );
     }
 }
 
+echo json_encode($response);
