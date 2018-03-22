@@ -7,5 +7,6 @@ target 'project3' do
 
   # Pods for project3
   pod 'GoogleMaps'
+  pod 'PopupDialog'
   
 end

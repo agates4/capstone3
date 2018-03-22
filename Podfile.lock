@@ -1,16 +1,22 @@
 PODS:
+  - DynamicBlurView (2.0.2)
   - GoogleMaps (2.6.0):
     - GoogleMaps/Maps (= 2.6.0)
   - GoogleMaps/Base (2.6.0)
   - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
+  - PopupDialog (0.7.1):
+    - DynamicBlurView (~> 2.0)
 
 DEPENDENCIES:
   - GoogleMaps
+  - PopupDialog
 
 SPEC CHECKSUMS:
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
 
-PODFILE CHECKSUM: 575532259092a77ceb5fa0edfde76e9ba50162ef
+PODFILE CHECKSUM: 24470a31579a7fc482b106cb6d2a46936a04b364
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0
