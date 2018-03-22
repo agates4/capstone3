@@ -13,6 +13,8 @@ if ( $result->num_rows == 0 ){ // User doesn't exist
         'status' => false,
         'message' => 'An error occured...'
     );
+    echo json_encode($response);
+    return;
 }
 else { // User exists
     $user = $result->fetch_assoc();
@@ -32,6 +34,8 @@ else { // User exists
             'status' => true,
             'message' => 'Success'
         );
+        echo json_encode($response);
+        return;
     }
     else {
         $_SESSION['message'] = "You have entered wrong password, try again!";
@@ -40,7 +44,7 @@ else { // User exists
             'status' => false,
             'message' => 'An error occured...'
         );
+        echo json_encode($response);
+        return;
     }
 }
-
-echo json_encode($response);
