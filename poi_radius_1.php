@@ -28,8 +28,8 @@ and open the template in the editor.
             $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
           // Seunghoon's modification - ends here
 
-            $user_lat = 41.14669; // $_POST["latitude"];
-            $user_lng = -81.342428; // $_POST["longitude"];
+            $user_lat = $_POST["latitude"]; // 41.14669;
+            $user_lng = $_POST["longitude"]; // -81.342428;
          
             $sql = "SELECT id, ( 3959 * acos( cos( radians( '$user_lat' ) ) * cos( radians( latitude ) ) 
             * cos( radians( longitude ) - radians( '$user_lng' ) ) + sin( radians( '$user_lat' ) ) * sin(radians(latitude)) ) ) AS distance, name, latitude, longitude 
