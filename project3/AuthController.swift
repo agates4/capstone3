@@ -38,26 +38,26 @@ class AuthController: UIViewController  {
                 "password" : password as AnyObject,
             ]
             
-            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
-                response in
-                print(response)
-                print(response.data)
-                print(response.description)
-                print(response.debugDescription)
-                
-                switch response.result {
-                case .success:
-                    print(response)
-                    break
-                case .failure(let error):
-                    print("poopy")
-                    print(error)
-                }
-            }
+//            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
+//                response in
+//                print(response)
+//                print(response.data)
+//                print(response.description)
+//                print(response.debugDescription)
+//                
+//                switch response.result {
+//                case .success:
+//                    print(response)
+//                    break
+//                case .failure(let error):
+//                    print("poopy")
+//                    print(error)
+//                }
+//            }
         }
         
         
-//        performSegue(withIdentifier: "tolist", sender: nil)
+        performSegue(withIdentifier: "tolist", sender: nil)
     }
     
     @IBOutlet weak var registerUsername: UITextField!
