@@ -1,12 +1,10 @@
-<?php
 // Curtis, I left all of your original code as comment
 // Please check my modification  
 
 // Seunghoon added it temporarily just for error checking
 //    error_reporting(E_ALL);
 //    ini_set('diaplay_errors', '1');
-?>
-        <?php
+<?php
           // Seunghoon's modification - starts here
             $host = 'us-cdbr-iron-east-05.cleardb.net';
             $user = 'b90eb97b555c5e';
@@ -59,4 +57,4 @@
             // Seunghoon's modification - starts here
             $mysqli->close();
             // Seunghoon's modification - ends here
-        ?>
+?>
