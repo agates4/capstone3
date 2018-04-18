@@ -6,19 +6,6 @@
 //    error_reporting(E_ALL);
 //    ini_set('diaplay_errors', '1');
 ?>
-
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
         <?php
           // Seunghoon's modification - starts here
             $host = 'us-cdbr-iron-east-05.cleardb.net';
@@ -73,5 +60,3 @@ and open the template in the editor.
             $mysqli->close();
             // Seunghoon's modification - ends here
         ?>
-    </body>
-</html>
