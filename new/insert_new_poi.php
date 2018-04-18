@@ -22,14 +22,21 @@
     // new poi inforamtion from front end
     $user_id = $_POST["user_id"];
     $poi_x = $_POST["latitude"];
-    $poi_y = $_POST["longitude"];
-    $poi_name = $_POST["name"];
-    $description = $_POST["description"];
-  
-    // insert into database
-    $sql_1 = "INSERT INTO points_of_interest (latitude, longitude, name, description) 
+    $poi_y = $_POST["longitude"]        $sql_1 = "INSERT INTO points_of_interest (latitude, longitude, name, description) 
               VALUES (" . $poi_x . ", " . $poi_y . ", '" . $poi_name . "', '" . $description . "')";
+;
+    $poi_name = $_POST["name"];
 
+    if(isset($_POST["description"])) {
+        $description = $_POST["description"];
+        $sql_1 = "INSERT INTO points_of_interest (latitude, longitude, name, description) 
+              VALUES (" . $poi_x . ", " . $poi_y . ", '" . $poi_name . "', '" . $description . "')";
+    } else {
+        $sql_1 = "INSERT INTO points_of_interest (latitude, longitude, name) 
+              VALUES (" . $poi_x . ", " . $poi_y . ", '" . $poi_name . "')";
+        
+    }
+    // insert into database
     if($mysqli->query($sql_1)) {
         $message_1 = "New poi was created.";
         $poi_id = $mysqli->insert_id;
