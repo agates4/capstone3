@@ -28,20 +28,11 @@
     $user_lng = $_POST["longitude"];
 
     // query from db
-    $sql = "SELECT user_id, id,
-            ( 3959 * acos( cos( radians( '$user_lat' ) ) * cos( radians( latitude ) ) 
-            * cos( radians( longitude ) - radians( '$user_lng' ) ) 
-            + sin( radians( '$user_lat' ) ) * sin(radians(latitude)) ) )
-            AS distance, 
-            name, 
-            latitude, 
-            longitude 
-    FROM (points_of_interest poi
-      INNER JOIN ownership o
-        ON poi.id = o.poi_id) 
-    HAVING distance < 15 
-    ORDER BY distance 
-    LIMIT 0 , 30";
+    $sql = "SELECT user_id, id, name, latitude, longitude 
+            FROM (points_of_interest poi
+                INNER JOIN ownership o
+                    ON poi.id = o.poi_id) 
+            ORDER BY name";
 
     // query result into array
     $user_poi_list = array();
