@@ -38,22 +38,25 @@ class AuthController: UIViewController  {
                 "password" : password as AnyObject,
             ]
             
-//            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
-//                response in
-//                print(response)
-//                print(response.data)
-//                print(response.description)
-//                print(response.debugDescription)
-//                
-//                switch response.result {
-//                case .success:
-//                    print(response)
-//                    break
-//                case .failure(let error):
-//                    print("poopy")
-//                    print(error)
-//                }
-//            }
+            // test username: agates10@kent.edu
+            // test password: helllo
+            
+            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
+                response in
+                print(response)
+                print(response.data)
+                print(response.description)
+                print(response.debugDescription)
+                
+                switch response.result {
+                case .success:
+                    print(response)
+                    break
+                case .failure(let error):
+                    print("poopy")
+                    print(error)
+                }
+            }
         }
         
         

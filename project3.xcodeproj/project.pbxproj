@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A875B3D2087BCDD00793468 /* POIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A875B3C2087BCDD00793468 /* POIViewController.swift */; };
 		0AC5892A20193DB200AD1691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5892920193DB200AD1691 /* AppDelegate.swift */; };
 		0AC5892C20193DB200AD1691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5892B20193DB200AD1691 /* ViewController.swift */; };
 		0AC5892F20193DB200AD1691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5892D20193DB200AD1691 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A875B3C2087BCDD00793468 /* POIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIViewController.swift; sourceTree = "<group>"; };
 		0AC5892620193DB200AD1691 /* project3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC5892920193DB200AD1691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC5892B20193DB200AD1691 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				0AC5893220193DB200AD1691 /* LaunchScreen.storyboard */,
 				0AC5893520193DB200AD1691 /* Info.plist */,
 				0AE5CD9720637EB900635FEC /* AuthController.swift */,
+				0A875B3C2087BCDD00793468 /* POIViewController.swift */,
 			);
 			path = project3;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC5892C20193DB200AD1691 /* ViewController.swift in Sources */,
+				0A875B3D2087BCDD00793468 /* POIViewController.swift in Sources */,
 				0AE5CD9820637EB900635FEC /* AuthController.swift in Sources */,
 				0AC5892A20193DB200AD1691 /* AppDelegate.swift in Sources */,
 			);
