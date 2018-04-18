@@ -23,16 +23,23 @@
     $poi_x = $_POST["latitude"];
     $poi_y = $_POST["longitude"];
     $poi_name = $_POST["name"];
-    $description = $_POST["description"];
-  
-    // update database
-    $sql = "UPDATE points_of_interest SET 
-    latitude='" . $poi_x . "' ,
-    longitude='" . $poi_y . "' ,
-    name='" . $poi_name . "' ,
-    description='" . $description  . "' 
-    WHERE id = '" . $poi_id  . "'";
 
+    if(isset($_POST["description"])) {
+        $description = $_POST["description"];
+        $sql = "UPDATE points_of_interest SET 
+            latitude='" . $poi_x . "' ,
+            longitude='" . $poi_y . "' ,
+            name='" . $poi_name . "' ,
+            description='" . $description  . "' 
+            WHERE id = '" . $poi_id  . "'";
+    } else {
+        $sql = "UPDATE points_of_interest SET 
+            latitude='" . $poi_x . "' ,
+            longitude='" . $poi_y . "' ,
+            name='" . $poi_name . "' 
+            WHERE id = '" . $poi_id  . "'";
+    }
+    // update database
     if($mysqli->query($sql)) {
         $message = "The poi was updated.";
         $poi_id = $mysqli->insert_id;
