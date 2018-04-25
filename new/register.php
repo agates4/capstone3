@@ -42,3 +42,10 @@
         }
 
     }
+
+    echo $message;
+    
+    // close db connection
+    $mysqli->close();
+
+?>
