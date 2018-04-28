@@ -16,8 +16,50 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class AuthController: UIViewController  {
+    
+    var bigArray : [[String]] = []
+    
+    func getPOIS() -> Void {
+        let urlString = "http://capstone3.herokuapp.com/new/get_user_pois.php"
+        
+        let parameters: [String: AnyObject] = [
+            "user_id" : "11" as AnyObject,
+            "latitude" : "password" as AnyObject,
+            "longitude" : "username" as AnyObject
+        ]
+        
+        Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
+            response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                var bigArray : [[String]] = []
+                
+                for (_,subJson):(String, JSON) in json {
+                    
+                    var smallArray : [String] = []
+                    
+                    for (_,subJson2):(String, JSON) in subJson {
+                        smallArray.append(subJson2.stringValue)
+                    }
+                    
+                    bigArray.append(smallArray)
+                }
+                self.bigArray = bigArray
+                self.performSegue(withIdentifier: "tolist", sender: nil)
+                
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
     
     var loginVisible = true
     
@@ -26,7 +68,7 @@ class AuthController: UIViewController  {
     @IBOutlet weak var loginView: UIView!
     
     @IBAction func login(_ sender: UIButton) {
-        let urlString = "http://capstone3.herokuapp.com/login.php/"
+        let urlString = "http://capstone3.herokuapp.com/new/login.php"
         
         if (loginEmail.text != nil && loginPassword.text != nil) {
             let email = loginEmail.text!
@@ -43,24 +85,17 @@ class AuthController: UIViewController  {
             
             Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
                 response in
-                print(response)
-                print(response.data)
-                print(response.description)
-                print(response.debugDescription)
                 
                 switch response.result {
                 case .success:
-                    print(response)
+                    self.getPOIS()
                     break
                 case .failure(let error):
-                    print("poopy")
                     print(error)
+                    break
                 }
             }
         }
-        
-        
-        performSegue(withIdentifier: "tolist", sender: nil)
     }
     
     @IBOutlet weak var registerUsername: UITextField!
@@ -69,7 +104,35 @@ class AuthController: UIViewController  {
     @IBOutlet weak var registerView: UIView!
     
     @IBAction func register(_ sender: UIButton) {
+        let urlString = "http://capstone3.herokuapp.com/new/register.php"
         
+        if (registerEmail.text != nil && registerPassword.text != nil && registerUsername.text != nil) {
+            let email = registerEmail.text!
+            let password = registerPassword.text!
+            let username = registerUsername.text!
+            print(email, password, username)
+            
+            let parameters: [String: AnyObject] = [
+                "email" : email as AnyObject,
+                "password" : password as AnyObject,
+                "username" : username as AnyObject
+            ]
+            
+            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
+                response in
+                
+                print(response.description)
+                
+                switch response.result {
+                case .success:
+                    self.getPOIS()
+                    break
+                case .failure(let error):
+                    print(error)
+                    break
+                }
+            }
+        }
     }
     
     @IBOutlet weak var switchButton: UIButton!
@@ -88,6 +151,10 @@ class AuthController: UIViewController  {
         let backItem = UIBarButtonItem()
         backItem.title = "Log Out"
         navigationItem.backBarButtonItem = backItem
+        
+        let destination = segue.destination as! POIViewController
+        destination.fruits = self.bigArray
+        
     }
     
 }

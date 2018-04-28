@@ -9,4 +9,5 @@ target 'project3' do
   pod 'GoogleMaps'
   pod 'PopupDialog'
   pod 'Alamofire'
+  pod 'SwiftyJSON', '~> 4.0'
 end

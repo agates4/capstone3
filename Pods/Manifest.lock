@@ -8,18 +8,21 @@ PODS:
     - GoogleMaps/Base
   - PopupDialog (0.7.1):
     - DynamicBlurView (~> 2.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - GoogleMaps
   - PopupDialog
+  - SwiftyJSON (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 9867ebefd6a10c2d802b89a52bc3c8838f64ff0c
+PODFILE CHECKSUM: 77b36c43419064326611130fa544935f0168a5a4
 
 COCOAPODS: 1.4.0

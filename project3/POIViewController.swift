@@ -8,11 +8,12 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import PopupDialog
 
 class POIViewController: UITableViewController  {
 
-    var fruits = ["Apple", "Apricot", "Banana", "Blueberry", "Cantaloupe", "Cherry", "Clementine", "Coconut", "Cranberry", "Fig", "Grape", "Grapefruit", "Kiwi fruit", "Lemon", "Lime", "Lychee", "Mandarine", "Mango", "Melon", "Nectarine", "Olive", "Orange", "Papaya", "Peach", "Pear", "Pineapple", "Raspberry", "Strawberry"]
-    
+    var fruits : [[String]] = []
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -23,12 +24,29 @@ class POIViewController: UITableViewController  {
         return fruits.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let fruit = fruits[indexPath.row]
+        print(fruit)
+        
+        // Prepare the popup assets
+        let title = fruit[2]
+        let message = "Description: " + fruit[0] + "\nLatitude: " + fruit[1] + "\nLongitude: " + fruit[3]
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message) {
+            print("popped down")
+        }
+        self.present(popup, animated: true) {
+            print("popped up")
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         
-        let fruitName = fruits[indexPath.row]
-        cell.textLabel?.text = fruitName
-        cell.detailTextLabel?.text = "Delicious!"
+        let fruit = fruits[indexPath.row]
+        cell.textLabel?.text = fruit[2]
+        cell.detailTextLabel?.text = fruit[0]
         
         return cell
     }
