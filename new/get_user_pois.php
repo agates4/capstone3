@@ -53,7 +53,7 @@
             'description' => $row["description"]);
         }
     }
-
+    echo isset($result);
     // array into json
     $user_poi_json = json_encode($user_poi_list);
     echo $user_poi_json;
