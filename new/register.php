@@ -47,7 +47,7 @@
 
     $result = array('message' => $message);
     $result_json = json_encode($result);
-    echo $login_result_json;
+    echo $result_json;
     
     // close db connection
     $mysqli->close();
