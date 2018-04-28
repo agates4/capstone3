@@ -43,6 +43,7 @@
     // query result into array
     $user_poi_list = array();
     $result = $mysqli->query($sql);
+    echo $result;
     if ($result->num_rows > 0){
         echo "hello";
         while ($row = $result->fetch_assoc()){
