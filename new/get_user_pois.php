@@ -29,7 +29,7 @@
     $result = $mysqli->query($sql);
     $user_row = $result->fetch_assoc();
     $user_id = $user_row['id']
-
+    echo $user_id;
 
     // query from db
     $sql = "SELECT user_id, id, name, latitude, longitude, description 
