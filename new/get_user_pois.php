@@ -19,7 +19,7 @@
     $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
     // user email
-    $user_id = $POST['user_id'];
+    $user_id = $_POST['user_id'];
     
 //     // get user's id from the email
 //     $sql = "SELECT * FROM users WHERE email = $user_email";
