@@ -13,6 +13,9 @@ import MapKit
 import CoreLocation
 import PopupDialog
 
+import Alamofire
+import SwiftyJSON
+
 class ViewController: UIViewController, GMSPanoramaViewDelegate, CLLocationManagerDelegate  {
     
     var SCALE:CGFloat?
@@ -22,14 +25,61 @@ class ViewController: UIViewController, GMSPanoramaViewDelegate, CLLocationManag
     var locationManager = CLLocationManager()
     var lastLocation = CLLocationCoordinate2D()
     var lastCalled = "WILL MOVE TO"
+    var POIList : [[String]] = []
     
-    func addMarker(coords: CLLocationCoordinate2D) {
-        // Create a marker in paris
-        let position = CLLocationCoordinate2D(latitude: coords.latitude, longitude: coords.longitude)
-        let marker = GMSMarker(position: position)
+    func getPOIS() {
+        let urlString = "http://capstone3.herokuapp.com/new/get_pois.php"
         
-        // Add the marker to a GMSPanoramaView object named panoView
-        marker.panoramaView = (self.view as! GMSPanoramaView)
+        let parameters: [String: AnyObject] = [
+            "latitude" : locationManager.location!.coordinate.latitude as AnyObject,
+            "longitude" : locationManager.location!.coordinate.longitude as AnyObject
+        ]
+        
+        Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON {
+            response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                var bigArray : [[String]] = []
+                
+                for (_,subJson):(String, JSON) in json {
+                    
+                    var smallArray : [String] = []
+                    
+                    for (_,subJson2):(String, JSON) in subJson {
+                        smallArray.append(subJson2.stringValue)
+                    }
+                    
+                    bigArray.append(smallArray)
+                }
+                self.addMarker(bigPOIList: bigArray)
+                
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
+    
+    func addMarker(bigPOIList: [[String]]) {
+        // Create a marker in paris
+        self.POIList = bigPOIList
+        
+        for POI in bigPOIList {
+            let latitude = POI[3]
+            let longitude = POI[1]
+            let ID = POI[4]
+            
+            let position = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
+            let marker = GMSMarker(position: position)
+            marker.title = ID
+            
+            // Add the marker to a GMSPanoramaView object named panoView
+            marker.panoramaView = (self.view as! GMSPanoramaView)
+        }
     }
     
     func panoramaView(_ view: GMSPanoramaView, didMoveTo panorama: GMSPanorama?) {
@@ -94,8 +144,25 @@ class ViewController: UIViewController, GMSPanoramaViewDelegate, CLLocationManag
     
     func panoramaView(_ panoramaView: GMSPanoramaView, didTap marker: GMSMarker) -> Bool {
         // Prepare the popup assets
-        let title = "THIS IS THE POI TITLE"
-        let message = "This is the information section of the associated POI"
+        
+        let ID = marker.title!
+        var ourPOI : [String] = []
+        for POI in self.POIList {
+            let ID2 = POI[4]
+            
+            if(ID == ID2) {
+                ourPOI = POI
+                break
+            }
+        }
+        
+        let latitude = ourPOI[3]
+        let longitude = ourPOI[1]
+        let title2 = ourPOI[2]
+        let description = ourPOI[0]
+        
+        let title = title2
+        let message = "Description: " + description + "\nLatitude: " + latitude + "\nLongitude: " + longitude
         
         // Create the dialog
         let popup = PopupDialog(title: title, message: message) {
@@ -143,7 +210,9 @@ class ViewController: UIViewController, GMSPanoramaViewDelegate, CLLocationManag
         guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
         lastLocation = locValue
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-        addMarker(coords: locValue)
+        
+        getPOIS()
+        
         panoView.moveNearCoordinate(CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude))
         
     }

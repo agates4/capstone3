@@ -22,11 +22,11 @@ class AuthController: UIViewController  {
     
     var bigArray : [[String]] = []
     
-    func getPOIS() -> Void {
+    func getPOIS(email: String) -> Void {
         let urlString = "http://capstone3.herokuapp.com/new/get_user_pois.php"
         
         let parameters: [String: AnyObject] = [
-            "user_id" : "11" as AnyObject,
+            "user_id" : email as AnyObject,
             "latitude" : "password" as AnyObject,
             "longitude" : "username" as AnyObject
         ]
@@ -88,7 +88,7 @@ class AuthController: UIViewController  {
                 
                 switch response.result {
                 case .success:
-                    self.getPOIS()
+                    self.getPOIS(email: email)
                     break
                 case .failure(let error):
                     print(error)
@@ -125,7 +125,7 @@ class AuthController: UIViewController  {
                 
                 switch response.result {
                 case .success:
-                    self.getPOIS()
+                    self.getPOIS(email: email)
                     break
                 case .failure(let error):
                     print(error)
