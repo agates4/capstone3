@@ -22,9 +22,10 @@
     // new poi inforamtion from front end
     $user_id = $_POST["user_id"];
     $poi_x = $_POST["latitude"];
-    $poi_y = $_POST["longitude"]        $sql_1 = "INSERT INTO points_of_interest (latitude, longitude, name, description) 
+    $poi_y = $_POST["longitude"];        
+    $sql_1 = "INSERT INTO points_of_interest (latitude, longitude, name, description) 
               VALUES (" . $poi_x . ", " . $poi_y . ", '" . $poi_name . "', '" . $description . "')";
-;
+
     $poi_name = $_POST["name"];
 
     if(isset($_POST["description"])) {
