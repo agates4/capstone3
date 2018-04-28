@@ -1,7 +1,7 @@
 <?php
 
     // POST Variables
-    //      $_POST["user_id"]       - user id number
+    //      $_POST["email"]         - user's email
     //      $_POST["latitude"]      - user location latitude
     //      $_POST["longitude"]     - user location longitude
 
@@ -20,8 +20,14 @@
     $db = 'heroku_ddc26ba47105536';
     $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
-    // user id
-    $user_id = $POST['user_id'];
+    // user email
+    $user_email = $POST['user_email'];
+    
+    // get user's id from the email
+    $sql = "SELECT * FROM users WHERE email = $user_email";
+    $result = $mysqli->query($sql);
+    $user = $result->fetch_assoc();
+    $user_id = $user['id'];
 
     // user location
     $user_lat = $_POST["latitude"];
@@ -31,7 +37,8 @@
     $sql = "SELECT user_id, id, name, latitude, longitude 
             FROM (points_of_interest poi
                 INNER JOIN ownership o
-                    ON poi.id = o.poi_id) 
+                    ON poi.id = o.poi_id)
+            WHERE ownership.id = $user_id
             ORDER BY name";
 
     // query result into array
