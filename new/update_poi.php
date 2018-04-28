@@ -20,15 +20,14 @@
 
     // user modification of existing poi
     $poi_id = $_POST["poi_id"];
-    $poi_x = $_POST["latitude"];
-    $poi_y = $_POST["longitude"];
+    //$poi_x = $_POST["latitude"];
+    //$poi_y = $_POST["longitude"];
     $poi_name = $_POST["name"];
     
     /*
     Removed:
         latitude='" . $poi_x . "' ,
         longitude='" . $poi_y . "' ,
-        name='" . $poi_name . "' ,
     */
 
     
@@ -36,6 +35,7 @@
         $description = $_POST["description"];
         $sql = "UPDATE points_of_interest SET 
             description='" . $description  . "' 
+            name='" . $poi_name . "' ,
             WHERE id = '" . $poi_id  . "'";
     } else {
         $sql = "UPDATE points_of_interest SET 
