@@ -31,15 +31,18 @@ else {
     <div class="container fluid">
 
         <?php
+            /*
+              removed:
+                latitude='" . $poi_x . "' ,
+                longitude='" . $poi_y . "' ,
+                name='" . $poi_name . "' ,
+            */
             $poi_id=$_GET['id'];
-            $poi_name=$_POST['name'];
-            $poi_x=$_POST['latitude'];
-            $poi_y=$_POST['longitude'];
+            //$poi_name=$_POST['name'];
+            //$poi_x=$_POST['latitude'];
+            //$poi_y=$_POST['longitude'];
             $description=$_POST['description'];
-            $sql1 = "UPDATE points_of_interest SET 
-              latitude='" . $poi_x . "' ,
-              longitude='" . $poi_y . "' ,
-              name='" . $poi_name . "' ,
+            $sql1 = "UPDATE points_of_interest SET        
               description='" . $description  . "' 
               WHERE id = '" . $poi_id  . "'";
             if($mysqli->query($sql1)) {
