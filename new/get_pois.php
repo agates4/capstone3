@@ -31,7 +31,8 @@
             AS distance, 
             name, 
             latitude, 
-            longitude 
+            longitude,
+            description
     FROM points_of_interest 
     HAVING distance < 15 
     ORDER BY distance 
