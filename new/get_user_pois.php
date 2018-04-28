@@ -38,8 +38,7 @@
             FROM (points_of_interest poi
                 INNER JOIN ownership o
                     ON id = o.poi_id)
-                    WHERE $user_id = o.user_id
-            ORDER BY name";
+                WHERE $user_id = o.user_id";
 
     // query result into array
     $user_poi_list = array();
