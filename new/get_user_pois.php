@@ -24,7 +24,7 @@
 
 
     // get user's id from the email
-    $sql = "SELECT * FROM users WHERE email = " . "`" . $user_email . "`";
+    $sql = "SELECT * FROM users WHERE email = " . "'" . $user_email . "'";
     $result = $mysqli->query($sql);
     echo $sql;
     echo $mysqli->error;
