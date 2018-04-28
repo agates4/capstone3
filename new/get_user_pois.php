@@ -37,7 +37,8 @@
     $sql = "SELECT user_id, id, name, latitude, longitude, description 
             FROM (points_of_interest poi
                 INNER JOIN ownership o
-                    ON $user_id = o.user_id)
+                    ON id = o.poi_id)
+                    WHERE $user_id = o.user_id
             ORDER BY name";
 
     // query result into array
