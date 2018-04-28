@@ -44,7 +44,9 @@
     $user_poi_list = array();
     $result = $mysqli->query($sql);
     if ($result->num_rows > 0){
+        echo "hello";
         while ($row = $result->fetch_assoc()){
+            echo "test";
             $user_poi_list[] = array(
             'poi_id' => $row["id"],
             'name' => $row["name"],
@@ -53,7 +55,6 @@
             'description' => $row["description"]);
         }
     }
-    echo isset($result);
     // array into json
     $user_poi_json = json_encode($user_poi_list);
     echo $user_poi_json;
