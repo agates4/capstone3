@@ -1,7 +1,7 @@
 <?php
 
     // POST Variables
-    //      $_POST["email"]         - user's email
+    //      $_POST["user_id"]       - user's id
     //      $_POST["latitude"]      - user location latitude
     //      $_POST["longitude"]     - user location longitude
 
@@ -21,13 +21,13 @@
     $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
     // user email
-    $user_email = $POST['user_email'];
+    $user_id = $POST['user_id'];
     
-    // get user's id from the email
-    $sql = "SELECT * FROM users WHERE email = $user_email";
-    $result = $mysqli->query($sql);
-    $user = $result->fetch_assoc();
-    $user_id = $user['id'];
+//     // get user's id from the email
+//     $sql = "SELECT * FROM users WHERE email = $user_email";
+//     $result = $mysqli->query($sql);
+//     $user = $result->fetch_assoc();
+//     $user_id = $user['id'];
 
     // user location
     $user_lat = $_POST["latitude"];
@@ -38,7 +38,6 @@
             FROM (points_of_interest poi
                 INNER JOIN ownership o
                     ON poi.id = o.poi_id)
-            WHERE ownership.id = $user_id
             ORDER BY name";
 
     // query result into array
