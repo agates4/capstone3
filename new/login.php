@@ -34,7 +34,7 @@
         }
         else {  // password doesn't match
             $mysqli->close();
-            die(header("HTTP/1.0 404 Not Found");
+            die(header("HTTP/1.0 404 Not Found"));
         }
     }
 
