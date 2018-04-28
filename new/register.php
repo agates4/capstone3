@@ -25,7 +25,8 @@
 
     // We know user email exists if the rows returned are more than 0
     if ($result->num_rows > 0) {
-        $message = 'Failed to register. User with this email already exists!';
+        $mysqli->close();
+        die(header("HTTP/1.0 404 Not Found"));
     }
     else { // Email doesn't already exist in a database, proceed...
 
@@ -38,7 +39,8 @@
             $message = "Thank you for signing up! Your account was created.";
         }
         else {
-            $message = 'Registration failed!';
+            $mysqli->close();
+            die(header("HTTP/1.0 404 Not Found"));
         }
 
     }
