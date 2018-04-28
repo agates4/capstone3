@@ -21,7 +21,7 @@
     $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
     // user email
-    $user_id = $POST['user_id'];
+    $user_id = $POST['email'];
     
 //     // get user's id from the email
 //     $sql = "SELECT * FROM users WHERE email = $user_email";
@@ -30,14 +30,14 @@
 //     $user_id = $user['id'];
 
     // user location
-    $user_lat = $_POST["latitude"];
-    $user_lng = $_POST["longitude"];
+    //$user_lat = $_POST["latitude"];
+    //$user_lng = $_POST["longitude"];
 
     // query from db
-    $sql = "SELECT user_id, id, name, latitude, longitude 
+    $sql = "SELECT user_id, id, name, latitude, longitude, description 
             FROM (points_of_interest poi
                 INNER JOIN ownership o
-                    ON poi.id = o.poi_id)
+                    ON $user_id = o.user_id)
             ORDER BY name";
 
     // query result into array
