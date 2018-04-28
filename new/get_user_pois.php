@@ -19,7 +19,6 @@
     $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
     // user email
-    
     $user_email = $_POST['user_id'];
 
 
@@ -28,8 +27,7 @@
     $sql = "SELECT * FROM users WHERE email = $user_email";
     $result = $mysqli->query($sql);
     $user_row = $result->fetch_assoc();
-    $user_id = $user_row['id']
-    echo $user_id;
+    $user_id = $user_row['id'];
 
     // query from db
     $sql = "SELECT user_id, id, name, latitude, longitude, description 
