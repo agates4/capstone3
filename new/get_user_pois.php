@@ -26,6 +26,7 @@
     // get user's id from the email
     $sql = "SELECT * FROM users WHERE email = $user_email";
     $result = $mysqli->query($sql);
+    echo $mysqli->error;
     var_dump($result);
     $user_row = $result->fetch_assoc();
     $user_id = $user_row['id'];
