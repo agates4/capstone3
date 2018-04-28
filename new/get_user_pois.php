@@ -2,9 +2,7 @@
 
     // POST Variables
     //      $_POST["user_id"]       - user's id
-    //      $_POST["latitude"]      - user location latitude
-    //      $_POST["longitude"]     - user location longitude
-
+   
     // Return
     //      JSON
     //          "poi_id"            - poi id number
@@ -26,28 +24,23 @@
 //     // get user's id from the email
 //     $sql = "SELECT * FROM users WHERE email = $user_email";
 //     $result = $mysqli->query($sql);
-//     $user = $result->fetch_assoc();
-//     $user_id = $user['id'];
+//     $user_row = $result->fetch_assoc();
+//     $user_id = $user_row['id']
 
-    // user location
-    //$user_lat = $_POST["latitude"];
-    //$user_lng = $_POST["longitude"];
 
     // query from db
     $sql = "SELECT user_id, id, name, latitude, longitude, description 
             FROM (points_of_interest poi
                 INNER JOIN ownership o
                     ON id = o.poi_id)
-                WHERE $user_id = o.user_id";
+            WHERE $user_id = o.user_id";
 
     // query result into array
     $user_poi_list = array();
     $result = $mysqli->query($sql);
-    echo $result;
+
     if ($result->num_rows > 0){
-        echo "hello";
         while ($row = $result->fetch_assoc()){
-            echo "test";
             $user_poi_list[] = array(
             'poi_id' => $row["id"],
             'name' => $row["name"],
@@ -58,7 +51,7 @@
     }
     // array into json
     $user_poi_json = json_encode($user_poi_list);
-    //echo $user_poi_json;
+    echo $user_poi_json;
 
     // close db connection
     $mysqli->close();
