@@ -10,3 +10,5 @@ Instructions for Testing
 3) install Cocoapods with the following command: sudo gem install cocoapods
 4) After the installation completes in the same capstone3-ios folder type the following command: Pod install
 5) After that completes open the project3.xcworkspace file with xcode and run the application.
+
+If you have recieved an invite to download this application all you have to do is check your email and follow the instructions in that email.
